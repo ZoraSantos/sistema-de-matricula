@@ -1,0 +1,17 @@
+{
+  "name": "matricula",
+  "version": "1.0.0",
+  "description": "Sistema de matrícula ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Zoranildo Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.16",
+    "react": "^16.6.3"
+  }
+}
