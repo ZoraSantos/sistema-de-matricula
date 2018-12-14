@@ -8,12 +8,12 @@ const instances = {
 
 //configuration mongoose
 exports.mongo = {
-    start: () => {
+    start: async () => {
         const connectionData = {
             URL:'mongodb://matricula:12345a@ds131814.mlab.com:31814/matricula'
         };
 
-        instances.mongo = mongoose.createConnection(connection.URL);
+        instances.mongo = await mongoose.createConnection(connection.URL);
 
         instances.mongo.on('open', () => {
             console.log('connected');
@@ -22,7 +22,6 @@ exports.mongo = {
         instances.mongo.on('error', () => {
             console.log('connection failed');
         });
-        return instances.mongo;
     },
     getInstance: () => {
         return instances.mongo;
