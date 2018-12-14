@@ -1,4 +1,4 @@
-const MatriculaController = require('../controller/matricula-controller');
+const MatriculaController = require('./controller/matricula-controller');
 
 module.exports = {
     start: (app) => {

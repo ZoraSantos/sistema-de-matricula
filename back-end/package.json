@@ -9,10 +9,8 @@
   "author": "Zoranildo Santos",
   "license": "ISC",
   "dependencies": {
-    "@types/mongoose": "^5.3.5",
-    "body-parser": "^1.18.3",
+  "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.3.16",
-    "react": "^16.6.3"
+    "mongoose": "^5.3.16"
   }
 }

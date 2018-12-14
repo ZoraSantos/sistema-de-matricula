@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const ConnectionsConfig = require('../back-end/config/database');
+const ConnectionsConfig = require('../config/database');
 const connectionInstance = ConnectionsConfig.mongo.getInstance;
 
 exports.listAllMatriculas = async (req, res) => {
