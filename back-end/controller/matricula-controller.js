@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
+const GeneralConstants = require('../constants/general-constant');
 const ConnectionsConfig = require('../config/database');
 const connectionInstance = ConnectionsConfig.mongo.getInstance;
+const COLLECTIONS = GeneralConstants.COLLECTIONS;
+
 
 exports.listAllMatriculas = async (req, res) => {
-    connectionInstance().db.collection('matriculas').find({}).toArray((error, documents) => {
+    connectionInstance().db.collection(COLLECTIONS.matriculas).find({}).toArray((error, documents) => {
         if(error) {
             return res.status(400).json('error');
         }
@@ -19,7 +22,7 @@ exports.createMatricula = async (req, res) => {
             }
             res.json(documentCreated);
         };
-        connectionInstance.db.collection('matriculas').insertOne(data, options, callback);
+        connectionInstance().db.collection(COLLECTIONS.matriculas).insertOne(data, options, callback);
     };
 exports.updateMatricula = async (req, res) => {
         const id = req.query.id;
@@ -32,9 +35,9 @@ exports.updateMatricula = async (req, res) => {
             }
             res.json(documentUpdated);
         };
-        connectionInstance.db.collection('matriculas').updateOne(filter, data, options, callback);
+        connectionInstance().db.collection(COLLECTIONS.matriculas).updateOne(filter, data, options, callback);
     };
-exports.deleteMatricula = async(req, res) => {
+exports.deleteMatricula = async (req, res) => {
         const id = req.query.id;
         const options = {};
         const filter = { _id: mongoose.Types.ObjectId(id)};
@@ -44,5 +47,5 @@ exports.deleteMatricula = async(req, res) => {
             }
             res.json(documentDeleted);
         };
-        connectionInstance.db.collection('matriculas').deleteOne(filter, options, callback);
+        connectionInstance().db.collection(COLLECTIONS.matriculas).deleteOne(filter, options, callback);
     };

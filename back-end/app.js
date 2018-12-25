@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const ConnectionsConfig = require('./config/database');
 const RoutesMatricula = require('./routes/matricula-route');
-const PORT = 3000;
+const PORT = 3001;
 const app = express();
 
 ConnectionsConfig.mongo.start();
